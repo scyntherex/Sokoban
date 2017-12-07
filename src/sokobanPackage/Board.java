@@ -7,6 +7,7 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class Board extends JPanel {
 	private final int OFFSET = 30;
     private final int SPACE = 20;
@@ -15,9 +16,12 @@ public class Board extends JPanel {
     private final int TOP_COLLISION = 3;
     private final int BOTTOM_COLLISION = 4;
 
-    private ArrayList walls = new ArrayList();
-    private ArrayList baggs = new ArrayList();
-    private ArrayList areas = new ArrayList();
+	@SuppressWarnings("rawtypes")
+	private ArrayList walls = new ArrayList();
+	@SuppressWarnings("rawtypes")
+	private ArrayList baggs = new ArrayList();
+	@SuppressWarnings("rawtypes")
+	private ArrayList areas = new ArrayList();
     private Player soko;
     private int w = 0;
     private int h = 0;
@@ -51,7 +55,8 @@ public class Board extends JPanel {
         return this.h;
     }
 
-    public final void initWorld() {
+    @SuppressWarnings("unchecked")
+	public final void initWorld() {
         
         int x = OFFSET;
         int y = OFFSET;
@@ -95,12 +100,14 @@ public class Board extends JPanel {
         }
     }
 
-    public void buildWorld(Graphics g) {
+    @SuppressWarnings("unchecked")
+	public void buildWorld(Graphics g) {
 
         g.setColor(new Color(250, 240, 170));
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
 
-        ArrayList world = new ArrayList();
+        @SuppressWarnings("rawtypes")
+		ArrayList world = new ArrayList();
         world.addAll(walls);
         world.addAll(areas);
         world.addAll(baggs);

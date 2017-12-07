@@ -3,7 +3,7 @@ package sokobanPackage;
 import java.awt.Image;
 
 public class Actor {
-	private final int SPACE = 20;
+	private final int SPACE = 60;
 
     private int x;
     private int y;
